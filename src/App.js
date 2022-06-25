@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
+import Map from './components/Map.js'
+import SearchSection from './components/search section/SearchSection.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const MainStyled = styled.section`
+     display: flex;
+     width: 100%;
+
+     @media (max-width: 850px) {
+          flex-direction: column;
+     }
+`
+
+export default function App() {
+     return (
+          <MainStyled>
+          <SearchSection />
+               <Map />
+          </MainStyled>
+     );
 }
-
-export default App;
