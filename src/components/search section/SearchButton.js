@@ -23,9 +23,12 @@ const ArrowStyled = styled.img`
      transform: translateX(2.5px);
 `
 
-export default function SearchButton() {
+export default function SearchButton(props) {
+     function sendIp(ipValue) {
+          props.searchIp(ipValue);
+     }
      return (
-          <SearchButtonStyled>
+          <SearchButtonStyled onClick = {() => sendIp(props.ipValue)}>
                <ArrowStyled src = "./images/arrow.png"/>
           </SearchButtonStyled>
      )

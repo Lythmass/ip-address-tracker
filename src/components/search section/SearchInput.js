@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchButton from './SearchButton.js'
 import styled from 'styled-components'
 
 const SearchInputStyled = styled.input`
@@ -19,8 +20,22 @@ const SearchInputStyled = styled.input`
      }
 `
 
-export default function SearchInput() {
+export default function SearchInput(props) {
+     const [ipValue, setIpValue] = React.useState("");
+     function handleChange(event) {
+          setIpValue(event.target.value);
+     }
      return (
-          <SearchInputStyled />
+          <>
+               <SearchInputStyled
+                    onChange = {(event) => handleChange(event)}
+                    value = {ipValue}
+               />
+               { /* Search Button Tag */ }
+               <SearchButton
+                    searchIp = {props.searchIp}
+                    ipValue = {ipValue}
+               />
+          </>
      );
 }

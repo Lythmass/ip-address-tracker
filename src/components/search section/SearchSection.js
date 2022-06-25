@@ -24,8 +24,7 @@ export default function SearchSection(props) {
      return (
           <SearchSectionStyled>
                <SearchTitle /> { /* h1 tag */ }
-               <SearchInput /> { /* Input tag */}
-               <SearchButton /> { /* Search Button tag */ }
+               <SearchInput searchIp = {props.searchIp} /> { /* Input tag */}
           </SearchSectionStyled>
      );
 }

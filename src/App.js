@@ -13,10 +13,12 @@ const MainStyled = styled.section`
 `
 
 export default function App() {
+     const [ip, setIp] = React.useState("");
+
      return (
           <MainStyled>
-          <SearchSection />
-               <Map />
+          <SearchSection searchIp = {setIp}/>
+               <Map newIp = {ip} />
           </MainStyled>
      );
 }
