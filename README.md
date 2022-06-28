@@ -11,7 +11,7 @@ address in search input and click the enter button, which will
 display the location on the map. To see the detailed information,
 click the navigation button.
 ## Experience
-After completing this challenge, I have improved at integrating an API to a React project and managing components.
+After completing this challenge, I have improved at integrating an API to a React project, managing components and using styled components.
 ## Features
 
 - Continent of the address
