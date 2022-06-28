@@ -3,7 +3,7 @@
 
 This project uses an API which tracks IP address and locates it
 on the map.
-
+Link to the deployed app: https://lythmass.github.io/ip-address-tracker/
 
 ## How to use it
 In order to get the location of an IP Address, type the
