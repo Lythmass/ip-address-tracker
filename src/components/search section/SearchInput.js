@@ -17,6 +17,7 @@ const SearchInputStyled = styled.input`
      }
      @media (max-width: 850px) {
           width: 60%;
+          height: 0.5rem;
      }
 `
 

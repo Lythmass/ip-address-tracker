@@ -8,8 +8,9 @@ const SearchTitleStyled = styled.h1`
      text-transform: uppercase;
      letter-spacing: 0.3rem;
      cursor: default;
+     word-wrap: break-word;
      @media (max-width: 850px) {
-          font-size: 200%;
+          font-size: 170%;
      }
 `
 
