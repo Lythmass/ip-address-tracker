@@ -7,6 +7,9 @@ const InvalidStyled = styled.h1`
      font-family: 'Ubuntu Mono', monospace;
      letter-spacing: 0.1rem;
      cursor: default;
+     @media (max-width: 850px) {
+          font-size: 110%;
+     }
 `;
 
 export default function Invalid() {

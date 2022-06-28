@@ -23,7 +23,7 @@ const LocationDataHeaderStyled = styled.h1`
      cursor: default;
      word-wrap: break-word;
      @media (max-width: 850px) {
-          font-size: 170%;
+          font-size: 120%;
      }
 `;
 
