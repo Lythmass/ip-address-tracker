@@ -4,6 +4,7 @@ import SearchTitle from './SearchTitle.js'
 import SearchInput from './SearchInput.js'
 import SearchButton from './SearchButton.js'
 import ToLocation from './ToLocation.js'
+import Invalid from './Invalid.js'
 
 const SearchSectionStyled = styled.section`
      display: flex;
@@ -29,6 +30,7 @@ export default function SearchSection(props) {
                <SearchTitle /> { /* h1 tag */ }
                <SearchInput searchIp = {props.searchIp} /> { /* Input tag */}
                <ToLocation changeStyle = {props.changeStyle} /> { /* Change to location button */ }
+               {!props.isValid && <Invalid />}
           </SearchSectionStyled>
      );
 }

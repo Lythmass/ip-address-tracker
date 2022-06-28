@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { nanoid } from 'nanoid'
 
 const LocationDataStyled = styled.div`
      display: flex;
@@ -27,30 +28,38 @@ const LocationDataHeaderStyled = styled.h1`
 `;
 
 export default function LocationData(props) {
-     const data = [
-          {
-               "ip": props.data.ip
-          },
-          {
-               "continent": props.data.continent
-          },
-          {
-               "country": props.data.country
-          },
-          {
-               "city": props.data.city
-          },
-     ];
-     const displayData = data.map(eachData => {
+     if(props.data.success) {
+          const data = [
+               {
+                    "ip": props.data.ip
+               },
+               {
+                    "continent": props.data.continent
+               },
+               {
+                    "country": props.data.country
+               },
+               {
+                    "city": props.data.city
+               },
+          ];
+          const displayData = data.map(eachData => {
+               return (
+                    <LocationDataHeaderStyled key = {nanoid()}>
+                         {Object.keys(eachData)}: {eachData[Object.keys(eachData)]}
+                    </LocationDataHeaderStyled>
+               )
+          });
           return (
-               <LocationDataHeaderStyled>
-                    {Object.keys(eachData)}: {eachData[Object.keys(eachData)]}
-               </LocationDataHeaderStyled>
+               <LocationDataStyled>
+                    {displayData}
+               </LocationDataStyled>
           )
-     });
-     return (
-          <LocationDataStyled>
-               {displayData}
-          </LocationDataStyled>
-     )
+     } else {
+          return (
+               <LocationDataStyled>
+                    <LocationDataHeaderStyled>{props.data.message}</LocationDataHeaderStyled>
+               </LocationDataStyled>
+          )
+     }
 }

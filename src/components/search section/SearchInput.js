@@ -32,6 +32,7 @@ export default function SearchInput(props) {
                     onChange = {(event) => handleChange(event)}
                     value = {ipValue}
                />
+               
                { /* Search Button Tag */ }
                <SearchButton
                     searchIp = {props.searchIp}

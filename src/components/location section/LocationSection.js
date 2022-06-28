@@ -29,7 +29,7 @@ export default function LocationSection(props) {
      React.useEffect(() => {
           fetch(`https://ipwho.is/${props.newIp}`)
           .then(response => response.json())
-          .then(data => setNewData(data));
+          .then(data => setNewData(data))
      }, [props.newIp]);
 
      return (

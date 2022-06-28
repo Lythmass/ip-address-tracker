@@ -15,12 +15,13 @@ const MainStyled = styled.section`
 export default function App() {
      const [ip, setIp] = React.useState("");
      const [location, setLocation] = React.useState(false);
+     const [success, setSuccess] = React.useState(true);
 
      return (
           <MainStyled>
-               <SearchSection searchIp = {setIp} changeStyle = {setLocation} />
+               <SearchSection isValid = {success} searchIp = {setIp} changeStyle = {setLocation} />
                <LocationSection newStyle = {location} changeStyle = {setLocation} newIp = {ip} />
-               <Map newIp = {ip} />
+               <Map setValid = {setSuccess} newIp = {ip} />
           </MainStyled>
      );
 }

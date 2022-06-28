@@ -14,7 +14,7 @@ const SearchTitleStyled = styled.h1`
      }
 `
 
-export default function SearchTitle(props) {
+export default function SearchTitle() {
      return (
           <SearchTitleStyled>Enter IP Address</SearchTitleStyled>
      );

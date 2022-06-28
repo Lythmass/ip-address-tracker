@@ -6,12 +6,17 @@ export default function Map(props) {
      React.useEffect(() => {
           fetch(`https://ipwho.is/${props.newIp}`)
           .then(response => response.json())
-          .then(data => setNewData(data));
+          .then(data => setNewData(data))
 
      }, [props.newIp]);
      function MyComponent() {
           const map = useMap();
-          map.panTo([newData.latitude, newData.longitude]);
+          if(newData.success) {
+               map.panTo([newData.latitude, newData.longitude]);
+               props.setValid(true);
+          } else {
+               props.setValid(false);
+          }
           return null;
      }
      return (
@@ -21,7 +26,7 @@ export default function Map(props) {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                />
                <MyComponent />
-               <Marker position={[newData.latitude, newData.longitude]}> </Marker>
+               {newData.success && <Marker position={[newData.latitude, newData.longitude]}> </Marker> }
           </MapContainer>
      )
 }
